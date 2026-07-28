@@ -1,0 +1,250 @@
+/* ========== GLOBAL STYLES ========== */
+body {
+    background-color: #f8f9fa;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ========== KENYAN THEME SIDEBAR (SCROLLABLE) ========== */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 280px;
+    height: 100vh;               /* full viewport height */
+    background: #000000;        /* Black – strength */
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    z-index: 1000;
+    overflow: hidden;           /* prevent global scroll, let children scroll */
+}
+
+/* Header stays at top */
+.sidebar-top {
+    flex-shrink: 0;
+    padding: 2rem 1.5rem;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+/* Navigation area scrolls */
+.sidebar-nav {
+    flex: 1;
+    overflow-y: auto;
+    min-height: 0;              /* important for flex child to shrink */
+    padding: 1rem 0;
+}
+
+/* Footer stays at bottom */
+.sidebar-footer {
+    flex-shrink: 0;
+    padding: 1rem 1.5rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    background: inherit;
+}
+
+/* Sidebar user info */
+.sidebar-user {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.avatar-lg {
+    width: 48px;
+    height: 48px;
+    background: #2d3e50;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.user-info strong {
+    display: block;
+    font-size: 1rem;
+}
+
+.user-info small {
+    font-size: 0.75rem;
+    opacity: 0.7;
+}
+
+/* Sidebar navigation links */
+.sidebar-nav .nav {
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.sidebar-nav .nav-link {
+    color: #ddd;
+    padding: 0.5rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: all 0.2s;
+    border-radius: 0;
+}
+
+.sidebar-nav .nav-link i {
+    width: 24px;
+    font-size: 1.2rem;
+}
+
+.sidebar-nav .nav-link:hover {
+    background: rgba(255,255,255,0.1);
+    color: #fff;
+    padding-left: 2rem;
+}
+
+.sidebar-nav .nav-link.active {
+    background: #B71C1C;        /* Red – urgency */
+    color: #fff;
+    border-radius: 0 20px 20px 0;
+}
+
+/* Mini user at bottom */
+.user-mini {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.avatar-sm {
+    width: 32px;
+    height: 32px;
+    background: #2d3e50;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.user-mini-info strong {
+    display: block;
+    font-size: 0.85rem;
+}
+
+.user-mini-info small {
+    font-size: 0.7rem;
+    opacity: 0.7;
+}
+
+/* Logout button in footer */
+.sidebar-footer .btn-outline-light {
+    color: #fff;
+    border-color: #fff;
+    transition: 0.2s;
+}
+
+.sidebar-footer .btn-outline-light:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+/* ========== MAIN CONTENT AREA ========== */
+.main-content {
+    margin-left: 280px;
+    background: #f4f6f9;
+    min-height: 100vh;
+}
+
+/* ========== DASHBOARD CARDS ========== */
+.card {
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+}
+
+.card-header {
+    background-color: #000000;   /* Black header */
+    color: #fff;
+    border-radius: 12px 12px 0 0;
+    font-weight: 600;
+}
+
+.card-header.bg-success {
+    background-color: #008000 !important; /* Green */
+}
+
+.card-header.bg-danger {
+    background-color: #B71C1C !important; /* Red */
+}
+
+/* ========== ALERTS & BUTTONS (Kenyan Colors) ========== */
+.alert-success {
+    background-color: #e8f5e9;
+    border-color: #008000;
+    color: #1b5e20;
+}
+
+.alert-danger {
+    background-color: #ffebee;
+    border-color: #B71C1C;
+    color: #b71c1c;
+}
+
+.btn-success {
+    background-color: #008000;   /* Green */
+    border-color: #008000;
+}
+
+.btn-danger {
+    background-color: #B71C1C;   /* Red */
+    border-color: #B71C1C;
+}
+
+.btn-primary {
+    background-color: #000000;   /* Black */
+    border-color: #000000;
+}
+
+.btn-primary:hover {
+    background-color: #333;
+    border-color: #333;
+}
+
+.btn-warning {
+    background-color: #ffc107;
+    border-color: #ffc107;
+    color: #212529;
+}
+
+/* ========== TABLES ========== */
+.table thead {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.table th, .table td {
+    vertical-align: middle;
+}
+
+/* ========== FORMS ========== */
+.form-control:focus {
+    border-color: #008000;   /* Green accent */
+    box-shadow: 0 0 0 0.2rem rgba(0,128,0,0.25);
+}
+
+/* ========== MOBILE RESPONSIVENESS ========== */
+@media (max-width: 767.98px) {
+    .sidebar {
+        display: none;
+    }
+    .main-content {
+        margin-left: 0;
+    }
+    .card {
+        margin-bottom: 15px;
+    }
+}
